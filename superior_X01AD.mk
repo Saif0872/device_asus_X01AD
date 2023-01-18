@@ -22,25 +22,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/asus/X01AD/device.mk)
 
 # Inherit some common EvolutionOS stuff.
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+$(call inherit-product, vendor/superior/config/common_full_phone.mk)
 
 # Set shipping API level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# cherish Flags
+# Superior Flags
+TARGET_USES_AOSP_RECOVERY := true
+TARGET_GAPPS_ARCH := arm64
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_QUICK_TAP := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
-TARGET_BOOT_ANIMATION_RES := 720
+TARGET_USES_BLUR := true
+TARGET_SUPPORTS_NOW_PLAYING := true
+TARGET_INCLUDE_PIXEL_CHARGER := true
+TARGET_SUPPORTS_CALL_RECORDING := true
 TARGET_USES_MINI_GAPPS := false
 TARGET_BUILD_WITH_LTO := true
 
-# Cherish Maintainer Flags
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=Wayne
-CHERISH_BUILD_TYPE := UNOFFICIAL
-
 # Device identifiers.
-PRODUCT_NAME := cherish_X01AD
+PRODUCT_NAME := superior_X01AD
 PRODUCT_DEVICE := X01AD
 PRODUCT_MANUFACTURER := asus
 PRODUCT_BRAND := asus
